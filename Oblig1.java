@@ -8,6 +8,7 @@ import java.util.NoSuchElementException;
  */
 public class Oblig1 {
 
+    //assignment 1
     // to swap the integer values location inside the array
     private static void swap(int[] a, int i, int j)
     {
@@ -15,6 +16,8 @@ public class Oblig1 {
         a[i]=a[j];
         a[j]=temp;
     }
+
+    //assignment 2
     // to swap the char values location inside the array
     private static void swap(char[] a, int i, int j)
     {
@@ -23,7 +26,9 @@ public class Oblig1 {
         a[j]=temp;
     }
 
+    //assignment 3
     // to get the max value in the array in the last
+    //tested
     public static int maks(int a[])
     {
         if (a.length<1) throw new NoSuchElementException("the table is empty");
@@ -36,23 +41,27 @@ public class Oblig1 {
         return a[a.length - 1];
     }
 
+
+    //assignment 4
     // to get the number of swapping inside the array to get the max value in the last.
-    public static int ombyttinger(int[] a)
-    {
-
+    //tested
+    public static int ombyttinger(int[] a) {
         int coount = 0;
-        if (a.length<1) throw new NoSuchElementException("the table is empty");
-        for (int i=1; i<a.length; i++)
-            if (a[i - 1] > a[i])
-            {
+        if (a.length < 1) throw new NoSuchElementException("The table is empty");
+        for (int i = 1; i < a.length; i++)
+        {
+            if (a[i - 1] > a[i]) {
                 swap(a, i - 1, i);
-                coount++;
             }
+        coount++;
+    }
         System.out.println("The number of swapping inside the array to get the max value in the last is " + coount);
-
         return coount;
     }
+
+    //assignment 5
     //
+    //tested
     public static int antallUlikeSortert(int[] a) throws IllegalAccessException {
         int count = 1;
 
@@ -68,6 +77,9 @@ public class Oblig1 {
         return count;
     }
 
+    //assignment 1
+    //assignment 1
+    //assignment 1
     public static int antallUlikeUsortert(int[] a){
         int count = 1 ;
         if (a.length<2) count=a.length;
