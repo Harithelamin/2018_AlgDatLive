@@ -120,11 +120,10 @@ public class Oblig1 {
         Arrays.sort(a, l, a.length);
     }
 
+    //assignment 5
     //to rotate the array
     //tested
     public static void rotasjon(char[] a) {
-
-
         if (a.length > 1) {
             char temp = a[a.length - 1];
             for (int i = a.length - 1; i > 0; i--) {
@@ -204,9 +203,30 @@ public class Oblig1 {
     //tested???????????????
     //character strings
     //
-    public static String flett(String... s){
+    public static String flett(String ...s){
         StringBuilder str = new StringBuilder();
         if (s.length==0) str.append("");
+        int y  = s.length;
+        //
+        for (int i=0; i<s.length; i++)
+        {
+        int temp =y;
+        if(temp < s[i].length())
+        {
+            y=temp;
+        }
+              }
+        //
+        for (int i=0; i<s.length; i++)
+        {
+            for (String t : s)
+            {
+                if(i<t.length())
+                {
+                    str.append(t.charAt(i));
+                }
+            }
+        }
 
 
         return str.toString();
