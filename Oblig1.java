@@ -4,11 +4,11 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 /**
- * Created by lenovo on 9/8/2018.
+ * Created by Harith on 9/8/2018.
  */
 public class Oblig1 {
 
-    // basic methods
+    // basic method
     // to swap the integer values location inside the array
     private static void swap(int[] a, int i, int j)
     {
@@ -198,43 +198,47 @@ public class Oblig1 {
             }
             return str.toString();
     }
-
     //assignment 7, part b
-    //tested???????????????
+    //tested
     //character strings
     //
     public static String flett(String ...s){
         StringBuilder str = new StringBuilder();
         if (s.length==0) str.append("");
         int y  = s.length;
-        //
-        for (int i=0; i<s.length; i++)
+        // to get the length
+        for (int i = 1; i < s.length; i++)
         {
-        int temp =y;
-        if(temp < s[i].length())
-        {
-            y=temp;
+            int temp = s[i].length();
+            if (temp > y) y = temp;
         }
-              }
         //
-        for (int i=0; i<s.length; i++)
+        for (int i=0; i<y; i++)
         {
-            for (String t : s)
+            for (String t:s)
             {
-                if(i<t.length())
+                if (i<t.length())
                 {
-                    str.append(t.charAt(i));
+                 str.append(t.charAt(i));
                 }
             }
         }
-
-
+        System.out.println(str);
         return str.toString();
 
     }
+    //assignment 8
+    // to return a table of indexes to the values in table a where a should not be changed.
+    //
+    public static int[] indekssortering(int[] a){
+        return a;
 
 
-    public static int[] indekssortering(int[] a){ return a;}
+
+
+
+
+    }
     public static int[] tredjeMin(int[] a){return a;}
     boolean inneholdt(String a, String b){return false;}
 }
