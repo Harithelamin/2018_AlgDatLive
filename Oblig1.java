@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
  */
 public class Oblig1 {
 
-    // basic method
+    // basic methods
     // to swap the integer values location inside the array
     private static void swap(int[] a, int i, int j)
     {
