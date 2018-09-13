@@ -306,6 +306,8 @@ public class Oblig1 {
         return new int[]{m, nm, mn};//returnerer tabell med inndekser
 
     }
+    
+    //oppgave 10
      static char a1;
     static char b1;
     public static boolean inneholdt(String a, String b){
