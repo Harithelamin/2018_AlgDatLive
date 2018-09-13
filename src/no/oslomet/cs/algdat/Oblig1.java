@@ -229,7 +229,11 @@ public class Oblig1 {
         {
             index [i] =i;
         }
-        return index;
+        for (int i = 1; i < a.length; i++)
+        {
+            
+        }
+            return index;
     }
 
     //assignment 9
