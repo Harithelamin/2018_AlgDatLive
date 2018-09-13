@@ -297,5 +297,34 @@ public class Oblig1 {
         return new int[]{m, nm, mn};//returnerer tabell med inndekser
 
     }
-    boolean inneholdt(String a, String b){return false;}
+     static char a1;
+    static char b1;
+    public static boolean inneholdt(String a, String b){
+
+        boolean status = false;
+
+
+        while(true) {
+            for (int i = 0; i < a.length(); i++) {
+                a1 = a.charAt(i);
+
+                for (int j = 0; j < b.length(); j++) {
+                    b1 = b.charAt(j);
+
+                }
+                if (a1 == b1) {
+                    status = true;
+                } else {
+                    status = false;
+                }
+
+
+            }
+            return status;
+        }
+
+
+
+
+    }
 }
