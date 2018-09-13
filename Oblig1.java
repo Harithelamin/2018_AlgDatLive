@@ -235,17 +235,26 @@ public class Oblig1 {
     //assignment 8
     // to return a table of indexes to the values in table a where a should not be changed.
     //
-    public static int[] indekssortering(int[] a){
-        int[] indeks = new int[a.length];
+    public static int[] indekssortering(int[] a) {
 
+        int b[] = a.clone();                        //Lager to kloner av a
+        int d[] = a.clone();                        
+        int c[] = new int[a.length];                //lager et tomt array c med samme lengde som a
 
-        return a;
+        Arrays.sort(b);                             //Sorterer den ene klonen av a
 
+        int cIndeks = 0;                            //Setter startindeksen til det tomme arrayt c til 0
 
-
-
-
-
+        for (int i = 0; i < a.length; i++) {        //itererer gjennom b
+            for (int e = 0; e < a.length; e++) {    //itererer gjennom d for hver verdi av b
+                if (b[i] == d[e]) {                 //Hvis de er like settes indeksen til verdien i d
+                    c[cIndeks] = e;                 //inn i c.
+                    d[e]=-1;                        //Fjerner verdien fra d, slik at samme indeks ikke blir satt i c for duplikater
+                    cIndeks++;                      //inkrementerer c
+                }
+            }
+        }
+        return c;                                   
     }
     //assignment 9
     //tested?????????????????????????????????????
