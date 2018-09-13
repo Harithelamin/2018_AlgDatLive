@@ -4,7 +4,12 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 /**
- * Created by Harith on 9/8/2018.
+ * Created by data structure of algorithm gruppe
+ * gruppemedlemmer:
+ * Amina Shahzad
+ * Alexandros Messaritakis Chousein Aga
+ * Gaute Tessand Baalsrud
+ * Harith Elamin
  */
 public class Oblig1 {
 
@@ -231,6 +236,9 @@ public class Oblig1 {
     // to return a table of indexes to the values in table a where a should not be changed.
     //
     public static int[] indekssortering(int[] a){
+        int[] indeks = new int[a.length];
+
+
         return a;
 
 
@@ -239,6 +247,55 @@ public class Oblig1 {
 
 
     }
-    public static int[] tredjeMin(int[] a){return a;}
+    //assignment 9
+    //tested?????????????????????????????????????
+    //Må forbedres! Du har minst 3 feil eller svakheter!
+    public static int[] tredjeMin(int[] a){
+        int n = a.length; //lengden til tabellen
+        //Hvis tabellen har mindre enn 3 verdier skal det "kastes Exception"
+        if (n < 2) {
+            throw new java.util.NoSuchElementException("a.length(" + n + ") < 2!");
+        }
+//
+        //some change
+        int[] indeks = new int[a.length];
+//
+        int m = indeks[0]; //Dette er indeksen/posisjonen til minste verdi
+        int nm = indeks[1]; //Dette er indeksen/posisjonen til nest miinste verdi
+        int mn = indeks[2]; //Dette er indeksen/posisjonen til tredj minste verdi
+
+        int minverdi = a[m]; //Minste verdi
+        int nestminverdi = a[nm]; //Nest minste verdi
+        int tredjminsteverdi = a[mn]; //Tredj minste verdi
+
+        //Lager en løkke for å loope gjennom alle tallene
+        for (int i = 3; i < n; i++) {
+            if (a[i] < tredjminsteverdi) { //Hvis a[i] er mindre enn trejminste så skal neste setning kjøres
+                if (a[i] < nestminverdi) {  //Hvis a[i] er mindre enn nestminste verdi så skal neste setning kjøres
+                    if (a[i] < minverdi) {  //Hvis a[i] er mindre en minst verdi så skal ny verdi settes
+                        mn = nm;
+                        tredjminsteverdi = nestminverdi;
+
+                        nm = m;
+                        nestminverdi = minverdi;
+
+                        m = i;
+                        minverdi = a[m];
+                    } else {
+                        mn = nm;
+                        tredjminsteverdi = nestminverdi;
+
+                        nm = i;
+                        nestminverdi = a[nm];
+                    }
+                } else {
+                    mn = i;
+                    tredjminsteverdi = a[mn];
+                }
+            }
+        }
+        return new int[]{m, nm, mn};//returnerer tabell med inndekser
+
+    }
     boolean inneholdt(String a, String b){return false;}
 }
