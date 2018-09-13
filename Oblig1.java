@@ -307,32 +307,44 @@ public class Oblig1 {
 
     }
     
-    //oppgave 10
-     static char a1;
-    static char b1;
-    public static boolean inneholdt(String a, String b){
+    //Oppgave 10
+    public static boolean inneholdt(String a, String b) {
 
-        boolean status = false;
+        boolean fant;                           //variabel som angir om man fant bokstaven i begge ordene
+        char aArray[] = new char[a.length()];   //array for string a
+        char bArray[] = new char[b.length()];   //array for string b
 
-
-        while(true) {
-            for (int i = 0; i < a.length(); i++) {
-                a1 = a.charAt(i);
-
-                for (int j = 0; j < b.length(); j++) {
-                    b1 = b.charAt(j);
-
-                }
-                if (a1 == b1) {
-                    status = true;
-                } else {
-                    status = false;
-                }
-
-
-            }
-            return status;
+        for (int i = 0; i < a.length(); i++) {  //omgjør ordene til array med samme lengde som antall bokstaver
+            aArray[i]=a.charAt(i);              //legger string a inn i aArray
         }
+                                                    
+        for (int i = 0; i < b.length(); i++) {     
+            bArray[i]=b.charAt(i);              //legger string b inn i bArray
+        }
+
+        Arrays.sort(bArray);                        //sorterer ordene (arrayene)
+        Arrays.sort(aArray);                        
+
+        int e = 0;                                  //setter indeks i bArray til 0
+
+        for (int i = 0; i<a.length(); i++) {        //denne for-løkken går gjennom sortert aArray
+            fant = false;                           
+
+         namedLoop: for ( ; e<b.length(); e++) {    //denne for-løkken går gjennom sortert bArray
+                if (aArray[i] == bArray[e]) {       //for hver verdi i aArray
+                    bArray[e] = '-';                //fjerner verdien hvis man finner match
+                    fant = true;                    //angir at man fant match
+                    break namedLoop;                //avslutter letingen for gitt verdi i aArray
+                }
+            }                                       //siden e er angitt utenfor løkkene vil
+                                                    //for-løkken lete der den slapp, i og med at de er sortert
+            if (!fant) {
+                return false;                       //returnerer false hvis den ikke fant verdi for alle
+            }
+        }
+        
+        return true;
+    }
 
 
 
